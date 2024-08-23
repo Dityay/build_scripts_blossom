@@ -33,7 +33,7 @@ echo "===================================="
 echo "===================================="
 echo "Adding exports..."
 echo "===================================="
-export BUILD_USERNAME=AsTechpro20
+export BUILD_USERNAME=Jayzee-Zee
 export BUILD_HOSTNAME=crave
 
 # Set up build environment
@@ -46,4 +46,4 @@ source build/envsetup.sh
 echo "===================================="
 echo "Building Lineage-20..."
 echo "===================================="
-brunch blossom-userdebug || brunch blossom
+brunch earth-userdebug || brunch earth
