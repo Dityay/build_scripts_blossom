@@ -1,4 +1,4 @@
-#Lineage-20 build_script_blossom
+#xdroid build_script_blossom
 
 # Remove some stuffs
 rm -rf .repo/local_manifests/ 
@@ -12,15 +12,15 @@ echo "Removing stuffs success..."
 echo "===================================="
 
 # Clone local_manifests repository
-git clone https://github.com/AsTechpro20/local_manifests_blossom.git -b Lineage-20 .repo/local_manifests
+git clone https://github.com/Dityay/Local-Manifest.git -b Voltage-14 .repo/local_manifests
 echo "===================================="
 echo "Cloning local_manifests was success..."
 echo "===================================="
 
-# Initialize Lineage-20 repo
-repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs
+# Initialize xdroid repo
+repo init -u https://github.com/xdroid-oss/xd_manifest.git -b fourteen --git-lfs
 echo "===================================="
-echo "Initializing Lineage-20 repo was success..."
+echo "Initializing XDroid repo was success..."
 echo "===================================="
 
 # Sync the repositories
@@ -33,17 +33,20 @@ echo "===================================="
 echo "===================================="
 echo "Adding exports..."
 echo "===================================="
-export BUILD_USERNAME=Jayzee-Zee
+export BUILD_USERNAME=Ditya
 export BUILD_HOSTNAME=crave
 
 # Set up build environment
 echo "===================================="
 echo "Setting up build environment..."
 echo "===================================="
-source build/envsetup.sh
+source build/envsetup.sh || . build/envsetup.sh
 
-#Building Lineage-20
+#Building xdroid
 echo "===================================="
-echo "Building Lineage-20..."
+echo "Building XDroid..."
+echo "i hope i dont waste my time to get an error"
 echo "===================================="
-brunch earth-userdebug || brunch earth
+lunch xdroid_earth-userdebug
+make xd -j$(nproc --all)
+
