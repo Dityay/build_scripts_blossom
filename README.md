@@ -8,5 +8,5 @@ curl https://raw.githubusercontent.com/AsTechpro20/build_scripts_blossom/Lineage
 <h2>For crave:</h2>
 
 ```
-crave run --no-patch -- "curl https://raw.githubusercontent.com/AsTechpro20/build_scripts_blossom/Lineage-20/script.sh | bash"
+crave run --no-patch -- "curl https://raw.githubusercontent.com/Dityay/build_scripts_blossom/Lineage-20/script.sh | bash"
 ```
