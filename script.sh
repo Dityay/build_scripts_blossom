@@ -1,5 +1,5 @@
 rm -rf .repo/local_manifests/  && # Clone local_manifests repository
-repo init -u https://github.com/CipherOS/android_manifest.git -b fifteen --git-lfs --depth=1 
+repo init -u https://github.com/CipherOS/android_manifest.git -b fourteen-qpr --git-lfs --depth=1 
  git clone https://github.com/Dityay/Local-Manifest --depth 1 -b Voltage-14 .repo/local_manifests && 
 # Sync the repositories
 /opt/crave/resync.sh  && 
@@ -10,4 +10,4 @@ export BUILD_USERNAME=Dityay
 echo Building...
  
 # Build the ROM
-breakfast earth userdebug && make installclean && mka bacon -j4
+lunch cipher_earth-ap2a-userdebug && mka bacon -j4
