@@ -1,7 +1,7 @@
 rm -rf .repo/local_manifests/  && # Clone local_manifests repository
-repo init -u https://github.com/CipherOS/android_manifest.git -b fifteen --git-lfs --depth=1 
+repo init --depth=1 -u https://github.com/AfterlifeOS/android_manifest.git -b 14 --git-lfs
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
  git clone https://github.com/Dityay/Local-Manifest --depth 1 -b Voltage-14 .repo/local_manifests &&
- git clone https://github.com/LineageOS/android_device_lineage_sepolicy.git device/lineage/sepolicy &&
 # Sync the repositories
 /opt/crave/resync.sh  && 
 # Set up build environment
@@ -11,4 +11,5 @@ export BUILD_USERNAME=Dityay
 echo Building...
  
 # Build the ROM
-lunch cipher_earth-ap3a-userdebug && mka bacon -j4
+. build/envsetup.sh
+goafterlife earth
