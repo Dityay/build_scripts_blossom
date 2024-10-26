@@ -9,14 +9,11 @@ repo sync
 # Set up build environment
 export BUILD_USERNAME=Dityay 
  export BUILD_HOSTNAME=crave 
- source build/envsetup.sh && 
+ . build/envsetup.sh && 
 echo Building...
 
-# Set up environment 
-. build/envsetup.sh
-
 # Choose a target device 
-lunch cipher_earth-ap1a-userdebug
+lunch cipher_earth-user
 
 # Compile CipherOS 
 mka bacon -j$(nproc --all)
