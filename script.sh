@@ -1,6 +1,6 @@
 rm -rf .repo/local_manifests/  && # Clone local_manifests repository
-repo init -u https://github.com/CipherOS/android_manifest.git -b fifteen
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+repo init -u https://github.com/SkylineUI/manifest -b aosp-14 --git-lfs
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
  git clone https://github.com/Dityay/Local-Manifest --depth 1 -b Voltage-14 .repo/local_manifests &&
  git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr device/mediatek/sepolicy_vndr &&
 # Sync the repositories
@@ -9,11 +9,12 @@ repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune 
 export BUILD_USERNAME=Dityay 
  export BUILD_HOSTNAME=crave 
 # Set up environment 
+
+# Set up environment
 . build/envsetup.sh
-echo Building
 
-# Choose a target device 
-lunch cipher_($device_codename)-ap3a-userdebug
+# Choose a target
+lunch aosp_earth-ap2a-userdebug
 
-# Compile CipherOS 
+# Build the code
 mka bacon -j$(nproc --all)
